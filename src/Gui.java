@@ -61,7 +61,8 @@ public class Gui extends JFrame implements Observer {
             }
             // Draw HUD
             g.setColor(Color.white);
-            g.drawString("Bullet Count: " + game.getBullets().size(), 50, 50);
+            g.drawString("Bullet Count: " + game.getBullets().size(), 50, 70);
+            g.drawString("Bullet Pool Count: " + game.getBulletPool().size(), 50, 50);
         }
 
         private void setPlayerSprite() {
@@ -77,7 +78,7 @@ public class Gui extends JFrame implements Observer {
     class Controller extends MouseAdapter {
         @Override
         public void mousePressed(MouseEvent e) {
-            int offSet = 30;
+            int offSet = 10;
             game.burstBullets(e.getX() + offSet, e.getY() + offSet);
         }
     }
